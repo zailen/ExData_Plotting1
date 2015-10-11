@@ -3,7 +3,7 @@
 library(dplyr)
 library(data.table) 
 
-hh_data <- tbl_df(read.table("household_power_consumption.txt", header=TRUE, sep= ";", na.strings = c("?","")))
+hh_data <- tbl_df(read.table("./data/household_power_consumption.txt", header=TRUE, sep= ";", na.strings = c("?","")))
 hh_data$Date <- as.Date(hh_data$Date, format = "%d/%m/%Y")
 
 hh_subset <- filter(hh_data, Date == "2007-02-01" | Date == "2007-02-02")
